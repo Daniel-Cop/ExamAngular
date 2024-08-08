@@ -18,7 +18,7 @@
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{
                                         item.quantity }}</td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{
-                                        item.article.priceHT * item.quantity | number: '1.2-2' }}</td>
+                                        item.article.priceHT * item.quantity | number: '1.2-2' }} €</td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><button
                                                 (click)="removeItem(i)"><svg xmlns="http://www.w3.org/2000/svg"
                                                         width="1.5em" height="1.5em" viewBox="0 0 256 256">
@@ -31,4 +31,11 @@
         </table>
         <p><span>Total (exluding tax) : </span><span>{{ cartService.getTotalAmount() | number: '1.2-2' }}€</span></p>
         <p>With tax : {{ cartService.getTotalAmount() | taxCalc: tva | number: '1.2-2' }}€</p>
+        <div class="flex justify-evenly mt-4">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded disabled:bg-gray-500"
+                        (click)="showAlert()">Buy</button>
+                <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded disabled:bg-gray-500"
+                        (click)="emptyCart()">Empty
+                        the cart</button>
+        </div>
 </div>

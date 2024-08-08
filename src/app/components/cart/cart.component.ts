@@ -14,7 +14,18 @@ export class CartComponent {
   cartService = inject(CartService)
   tva = 0.2
 
+  // call the service function to remove the item from the cart
   removeItem(index: number) {
     this.cartService.removeItem(index)
+  }
+
+  // fake alert 
+  showAlert() {
+    alert("Sorry, we are having technical issue.\nAt this moment is not possible to complete the transaction")
+  }
+
+  // call the service function to reset the cart
+  emptyCart() {
+    this.cartService.emptyCart()
   }
 }

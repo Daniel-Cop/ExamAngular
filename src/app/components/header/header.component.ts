@@ -13,6 +13,7 @@ import { CartComponent } from '../cart/cart.component';
 export class HeaderComponent {
   cartService = inject(CartService)
 
+  // hide or show the cart modal
   showCart() {
     document.getElementById("cart-modal")?.classList.toggle("translate-x-full")
     document.getElementById("cart-modal")?.classList.toggle("drop-shadow-[-5px_5px_5px_rgba(0,0,0,0.3)]")

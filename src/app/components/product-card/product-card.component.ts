@@ -15,11 +15,14 @@ import { ProductService } from '../../services/product.service';
 })
 export class ProductCardComponent {
   @Input() product?: IProduct;
+
+  // input the index of the item
   @Input() i?: number;
 
   cartService = inject(CartService)
   productService = inject(ProductService)
 
+  // change this to change  tax percentage
   tva = 0.2;
 
   addToCart(item: IProduct, index: number) {
