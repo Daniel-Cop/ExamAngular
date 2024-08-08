@@ -1,0 +1,5 @@
+<div class="m-10 grid grid-cols-4 gap-4 gap-y-14">
+    @for (product of productList; track $index; let i = $index) {
+    <app-product-card [product]="product" [i]="i"></app-product-card>
+    }
+</div>

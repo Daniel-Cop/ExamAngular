@@ -1,0 +1,31 @@
+@if (product && i != undefined) {
+<div
+    class="select-none max-w-md mx-auto rounded-md overflow-hidden shadow-md hover:shadow-lg h-[350px] flex flex-col justify-between">
+    <div class="relative flex justify-center items-center">
+        <img class="w-1/2" [src]="product.image" alt="Product Image">
+        <!-- <div class="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 m-2 rounded-md text-sm font-medium">SALE
+        </div> -->
+    </div>
+    <div class="p-4 bg-gray-200">
+        <div class="flex justify-between items-center">
+            <h3 class="text-lg font-medium mb-2">{{ product.name }}</h3>
+            <span class="font-bold text-lg">{{ product.priceHT | number: '1.2-2' }} €</span>
+        </div>
+        <div class="text-gray-600 text-sm mb-4 flex justify-between items-center"><span>Quantity</span> <span>{{
+                product.quantity
+                }}</span></div>
+        <div class="flex items-center justify-between">
+            <div class="flex">
+                <button class="bg-red-500 text-white font-bold w-[30px] h-[30px] rounded mr-4"
+                    (click)="reduceQty(i)">-</button>
+                <button class="bg-green-500 text-white font-bold w-[30px] h-[30px] rounded"
+                    (click)="increaseQty(i)">+</button>
+            </div>
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded disabled:bg-gray-500"
+                (click)="addToCart(product, i)" [disabled]="product.quantity<=0">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+}
